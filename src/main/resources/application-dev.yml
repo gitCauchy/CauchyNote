@@ -1,0 +1,20 @@
+server:
+  port: 8080
+ 
+spring:
+  datasource:
+    username: root
+    password: password
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+ 
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.cauchynote.user.entity
+ 
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
