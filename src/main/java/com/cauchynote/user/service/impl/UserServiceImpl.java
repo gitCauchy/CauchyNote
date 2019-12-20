@@ -33,5 +33,9 @@ public class UserServiceImpl implements UserService{
 	public void addUser(User user) {
 		userMapper.addUser(user);
 	}
+
+	public User findByName(String userName) {
+		return userMapper.findByName(userName);
+	}
 	
 }

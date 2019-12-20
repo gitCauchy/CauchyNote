@@ -1,5 +1,7 @@
 package com.cauchynote.user.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,31 +22,31 @@ public class UserController {
 	private UserService userService;
 	
 	@GetMapping("/getUser")
-	public ResponseEntity getUser(@RequestParam(value = "id") Long id) {
-		return new ResponseEntity(userService.getUserById(id),HttpStatus.OK);
+	public ResponseEntity<User> getUser(@RequestParam(value = "id") Long id) {
+		return new ResponseEntity<User>(userService.getUserById(id),HttpStatus.OK);
 	}
 	
 	@GetMapping("/deleteUser")
-	public ResponseEntity deleteUser(@RequestParam(value = "id") Long id) {
+	public ResponseEntity<HttpStatus> deleteUser(@RequestParam(value = "id") Long id) {
 		userService.deleteUser(id);
-		return new ResponseEntity(HttpStatus.OK);
+		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 	
 	@GetMapping("/getAllUsers")
-	public ResponseEntity getAllUsers() {
-		return new ResponseEntity(userService.getAllUsers(),HttpStatus.OK);
+	public ResponseEntity<List<User>> getAllUsers() {
+		return new ResponseEntity<List<User>>(userService.getAllUsers(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/modifyPassword")
-	public ResponseEntity modifyPassword(@RequestBody User user) {
+	public ResponseEntity<HttpStatus> modifyPassword(@RequestBody User user) {
 		userService.modifyPassword(user);
-		return new ResponseEntity(HttpStatus.OK);
+		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 	
 	@PostMapping("/addUser")
-	public ResponseEntity addUser(@RequestBody User user) {
+	public ResponseEntity<HttpStatus> addUser(@RequestBody User user) {
 		userService.addUser(user);
-		return new ResponseEntity(HttpStatus.OK);
+		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 	
 	

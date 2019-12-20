@@ -22,4 +22,6 @@ public interface UserService {
 	public void modifyPassword(User user);
 	
 	public void addUser(User user);
+	
+	public User findByName(String userName);
 }
