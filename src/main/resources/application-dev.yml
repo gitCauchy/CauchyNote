@@ -3,11 +3,11 @@ server:
  
 spring:
   datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT
     username: root
     password: password
-    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT
     driver-class-name: com.mysql.cj.jdbc.Driver
- 
+    type: com.alibaba.druid.pool.DruidDataSource
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.cauchynote.user.entity
