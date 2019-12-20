@@ -1,6 +1,10 @@
 package com.cauchynote.article.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
+
+import com.cauchynote.article.entity.Article;
 
 /**
  * 
@@ -12,6 +16,10 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class ArticleService {
-
+public interface ArticleService {
+	void addArticle(Article article);
+	void deleteArticle(Long id);
+	void modifyArticle(Article article);
+	Article getArticle(Long id);
+	List<Article> getArticleList();
 }
