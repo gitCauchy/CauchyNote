@@ -1,4 +1,14 @@
 package com.cauchynote.article.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cauchynote.article.entity.Article;
+import com.cauchynote.article.mapper.ArticleMapper;
+import com.cauchynote.article.service.ArticleService;
+
 /**
  * 
  * @author Cauchy
@@ -8,6 +18,31 @@ package com.cauchynote.article.service.impl;
  * @Version V0.1
  *
  */
-public class ArticleServiceImpl {
+@Service
+public class ArticleServiceImpl implements ArticleService{
+	@Autowired
+	ArticleMapper articleMapper;
+	
+	public void addArticle(Article article) {
+		articleMapper.addArticle(article);
+	}
+
+	public void deleteArticle(Long id) {
+		articleMapper.deleteArticle(id);
+	}
+
+	public void modifyArticle(Article article) {
+		modifyArticle(article);
+	}
+
+	public Article getArticle(Long id) {
+		Article article = articleMapper.getArticle(id);
+		return article;
+	}
+	
+	public List<Article> getArticleList(){
+		List<Article> articleList = articleMapper.getArticleList();
+		return articleList;
+	}
 
 }
