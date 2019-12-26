@@ -8,10 +8,7 @@ spring:
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-mybatis:
-  mapper-locations: classpath:mapping/*Mapper.xml
-  type-aliases-package: com.cauchynote.user.entity
- 
+
 #showSql
 logging:
   level:
