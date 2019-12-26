@@ -16,6 +16,15 @@ import org.springframework.stereotype.Repository;
 import com.cauchynote.system.entity.Permission;
 import com.cauchynote.system.entity.User;
 
+/**
+ * 
+ * @author Cauchy
+ * @ClassName UserMapper.java
+ * @Date 2019年12月26日
+ * @Description 用户持久层Mapper，提供用户CRUD以及鉴权行为操作。
+ * @Version V1.0
+ *
+ */
 @Repository
 public interface UserMapper {
 	/**
